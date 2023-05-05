@@ -1,0 +1,15 @@
+state:
+  initial_pose: [0.0, 0.0]
+
+config:
+  environment_size: [10.0, 10.0]
+
+test:
+  random_plan_points: [2, 8]
+  random_plan_time: [0.2, 0.8]
+  random_motion_time: [0.1, 1.0]
+  random_sense:
+    active: true
+    battery_time: [15.0, 40.0]
+
+

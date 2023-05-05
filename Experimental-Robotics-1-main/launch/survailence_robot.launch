@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <!-- Run the armor_service node -->
+    <node name="armor_service" 
+          pkg="armor" 
+          type="execute" 
+          args="it.emarolab.armor.ARMORMainService"/>
+
+    
+    <!-- Load definition of pregrasp motion into play_motion namespace -->
+    <rosparam command="load" file="$(find expo_assignment_1)/config/param.yaml" /> 
+  
+    <!-- Run FSM and other nodes required -->
+    <node pkg="expo_assignment_1"  
+          type="robot_state_machine.py"      
+          name="Robot_state_machine" 
+          launch-prefix="xterm -fa 'Monospace' -fs 10 -e">
+    </node>
+    
+    <node pkg="expo_assignment_1"  
+          type="robot_brain.py"
+          name="planner">
+    </node>
+    
+    <node pkg="expo_assignment_1"  
+          type="robot_brain2.py"
+          name="interface_helper">
+    </node>
+
+    <!-- Launch SMACH viewer -->
+    <node pkg="smach_viewer" type="smach_viewer.py" name="smach_viewer"/>
+    
+</launch>
+
