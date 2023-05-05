@@ -147,7 +147,30 @@ rocketOnce everything build.To execute the script with simulation do roslaunch c
                                          roslaunch assignment2 assignment.launch
                                          python send_goal_to_arm.py
 
-Once after the execution of the planning then a /decision topic is published to the statemachine for executing further process based on that further working takes place in the system. 
+Once after the execution of the planning then a /decision topic is published to the statemachine for executing further process based on that further working takes place in the system.And moveit is used for  the motion planning where the following can beed found in the folder [ass2](https://github.com/yeshwanthguru/Experimental-robotics-2/tree/main/ass2)
+
+## Moveit
+here are the benefits of using MoveIt in ROS Noetic with even more emojis:
+
+🚀 Simplified motion planning: MoveIt provides a simplified interface for motion planning that allows the user to specify a goal configuration and generate a trajectory to reach that configuration.
+
+🤖 Support for various types of robots: MoveIt supports a wide range of robots, including manipulators, mobile robots, and humanoid robots, and provides a unified interface to control their motion.
+
+🔌 Integration with ROS: MoveIt is designed to work seamlessly with ROS, allowing users to leverage other ROS packages and tools for perception, navigation, and control.
+
+🧩 Modular design: MoveIt has a modular design, which makes it easy to add new capabilities or modify existing ones.
+
+🎓 Support for multiple kinematic solvers: MoveIt provides support for multiple kinematic solvers, making it possible to switch between solvers based on the robot's capabilities or the application requirements.
+
+🔍 Advanced collision detection: MoveIt provides advanced collision detection algorithms that can efficiently check for collisions between the robot and the environment.
+
+📈 Trajectory optimization: MoveIt can optimize trajectories to minimize joint accelerations, joint velocities, or other criteria, resulting in smoother and more natural motion.
+
+🎨 Visualization tools: MoveIt provides visualization tools that allow the user to visualize the robot's motion and the environment, making it easier to debug and validate the robot's behavior.
+
+🎮 Integration with Gazebo: MoveIt can be integrated with Gazebo, a popular robot simulator, allowing users to simulate and test their motion planning algorithms in a virtual environment.
+
+👨‍👩‍👧‍👦 Large user community: MoveIt has a large and active user community that provides support, documentation, and examples, making it easier for new users to get started and for experienced users to share their knowledge and best practices.
 # Results
 The following has been attached at initially gave the result with the simulation environment:
 
