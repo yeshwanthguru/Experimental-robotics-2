@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="mobile_manipulator">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="arm">
+        <joint name="arm_base_joint"/>
+        <joint name="shoulder_joint"/>
+        <joint name="bottom_wrist_joint"/>
+        <joint name="elbow_joint"/>
+        <joint name="top_wrist_joint"/>
+        <joint name="camera_joint"/>
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="home" group="arm">
+        <joint name="arm_base_joint" value="0"/>
+        <joint name="bottom_wrist_joint" value="0"/>
+        <joint name="elbow_joint" value="0"/>
+        <joint name="shoulder_joint" value="0"/>
+        <joint name="top_wrist_joint" value="0"/>
+    </group_state>
+    <group_state name="down" group="arm">
+        <joint name="arm_base_joint" value="-1.5173"/>
+        <joint name="bottom_wrist_joint" value="1.4603"/>
+        <joint name="elbow_joint" value="0"/>
+        <joint name="shoulder_joint" value="0"/>
+        <joint name="top_wrist_joint" value="0"/>
+    </group_state>
+    <group_state name="down_left" group="arm">
+        <joint name="arm_base_joint" value="-0.0071"/>
+        <joint name="bottom_wrist_joint" value="1.4603"/>
+        <joint name="elbow_joint" value="0"/>
+        <joint name="shoulder_joint" value="0"/>
+        <joint name="top_wrist_joint" value="0"/>
+    </group_state>
+    <group_state name="down_right" group="arm">
+        <joint name="arm_base_joint" value="-3.1415"/>
+        <joint name="bottom_wrist_joint" value="1.4603"/>
+        <joint name="elbow_joint" value="0"/>
+        <joint name="shoulder_joint" value="0"/>
+        <joint name="top_wrist_joint" value="0"/>
+    </group_state>
+    <group_state name="horse" group="arm">
+        <joint name="arm_base_joint" value="-1.6171"/>
+        <joint name="bottom_wrist_joint" value="1.3036"/>
+        <joint name="elbow_joint" value="0.1781"/>
+        <joint name="shoulder_joint" value="0.5628"/>
+        <joint name="top_wrist_joint" value="-1.4176"/>
+    </group_state>
+    <group_state name="horse_right" group="arm">
+        <joint name="arm_base_joint" value="-2.8281"/>
+        <joint name="bottom_wrist_joint" value="1.3036"/>
+        <joint name="elbow_joint" value="0.1781"/>
+        <joint name="shoulder_joint" value="0.5628"/>
+        <joint name="top_wrist_joint" value="-1.4176"/>
+    </group_state>
+    <group_state name="horse_left" group="arm">
+        <joint name="arm_base_joint" value="-0.0499"/>
+        <joint name="bottom_wrist_joint" value="1.3036"/>
+        <joint name="elbow_joint" value="0.1781"/>
+        <joint name="shoulder_joint" value="0.5628"/>
+        <joint name="top_wrist_joint" value="-1.4176"/>
+    </group_state>
+    <group_state name="home_2" group="arm">
+        <joint name="arm_base_joint" value="-1.6146"/>
+        <joint name="bottom_wrist_joint" value="0"/>
+        <joint name="elbow_joint" value="0"/>
+        <joint name="shoulder_joint" value="0"/>
+        <joint name="top_wrist_joint" value="0"/>
+    </group_state>
+    <group_state name="home3" group="arm">
+        <joint name="arm_base_joint" value="-3.1165"/>
+        <joint name="bottom_wrist_joint" value="0"/>
+        <joint name="elbow_joint" value="0"/>
+        <joint name="shoulder_joint" value="0"/>
+        <joint name="top_wrist_joint" value="0"/>
+    </group_state>
+    <group_state name="back_45" group="arm">
+        <joint name="arm_base_joint" value="0.6133"/>
+        <joint name="bottom_wrist_joint" value="0"/>
+        <joint name="elbow_joint" value="0"/>
+        <joint name="shoulder_joint" value="0"/>
+        <joint name="top_wrist_joint" value="0.6133"/>
+    </group_state>
+    <group_state name="front_45" group="arm">
+        <joint name="arm_base_joint" value="-1.5645"/>
+        <joint name="bottom_wrist_joint" value="0"/>
+        <joint name="elbow_joint" value="0"/>
+        <joint name="shoulder_joint" value="0"/>
+        <joint name="top_wrist_joint" value="0.6133"/>
+    </group_state>
+    <group_state name="left_45" group="arm">
+        <joint name="arm_base_joint" value="-0.0375"/>
+        <joint name="bottom_wrist_joint" value="0"/>
+        <joint name="elbow_joint" value="0"/>
+        <joint name="shoulder_joint" value="0"/>
+        <joint name="top_wrist_joint" value="0.6133"/>
+    </group_state>
+    <group_state name="right_45" group="arm">
+        <joint name="arm_base_joint" value="-2.9412"/>
+        <joint name="bottom_wrist_joint" value="0"/>
+        <joint name="elbow_joint" value="0"/>
+        <joint name="shoulder_joint" value="0"/>
+        <joint name="top_wrist_joint" value="0.6133"/>
+    </group_state>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="arm_base" link2="base_link" reason="Adjacent"/>
+    <disable_collisions link1="arm_base" link2="bicep" reason="Adjacent"/>
+    <disable_collisions link1="arm_base" link2="front_left_wheel" reason="Never"/>
+    <disable_collisions link1="arm_base" link2="front_right_wheel" reason="Never"/>
+    <disable_collisions link1="arm_base" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="arm_base" link2="laser_link" reason="Never"/>
+    <disable_collisions link1="arm_base" link2="rear_left_wheel" reason="Never"/>
+    <disable_collisions link1="arm_base" link2="rear_right_wheel" reason="Never"/>
+    <disable_collisions link1="base_link" link2="front_left_wheel" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="front_right_wheel" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="imu_link" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="laser_link" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="rear_left_wheel" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="rear_right_wheel" reason="Adjacent"/>
+    <disable_collisions link1="bicep" link2="bottom_wrist" reason="Adjacent"/>
+    <disable_collisions link1="bicep" link2="front_left_wheel" reason="Never"/>
+    <disable_collisions link1="bicep" link2="front_right_wheel" reason="Never"/>
+    <disable_collisions link1="bicep" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="bicep" link2="rear_left_wheel" reason="Never"/>
+    <disable_collisions link1="bicep" link2="rear_right_wheel" reason="Never"/>
+    <disable_collisions link1="bottom_wrist" link2="elbow" reason="Adjacent"/>
+    <disable_collisions link1="bottom_wrist" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="bottom_wrist" link2="rear_left_wheel" reason="Never"/>
+    <disable_collisions link1="bottom_wrist" link2="rear_right_wheel" reason="Never"/>
+    <disable_collisions link1="bottom_wrist" link2="top_wrist" reason="Never"/>
+    <disable_collisions link1="elbow" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="elbow" link2="top_wrist" reason="Adjacent"/>
+    <disable_collisions link1="front_left_wheel" link2="front_right_wheel" reason="Never"/>
+    <disable_collisions link1="front_left_wheel" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="front_left_wheel" link2="laser_link" reason="Never"/>
+    <disable_collisions link1="front_left_wheel" link2="rear_left_wheel" reason="Never"/>
+    <disable_collisions link1="front_left_wheel" link2="rear_right_wheel" reason="Never"/>
+    <disable_collisions link1="front_right_wheel" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="front_right_wheel" link2="laser_link" reason="Never"/>
+    <disable_collisions link1="front_right_wheel" link2="rear_left_wheel" reason="Never"/>
+    <disable_collisions link1="front_right_wheel" link2="rear_right_wheel" reason="Never"/>
+    <disable_collisions link1="imu_link" link2="laser_link" reason="Never"/>
+    <disable_collisions link1="imu_link" link2="rear_left_wheel" reason="Never"/>
+    <disable_collisions link1="imu_link" link2="rear_right_wheel" reason="Never"/>
+    <disable_collisions link1="laser_link" link2="rear_left_wheel" reason="Never"/>
+    <disable_collisions link1="laser_link" link2="rear_right_wheel" reason="Never"/>
+    <disable_collisions link1="rear_left_wheel" link2="rear_right_wheel" reason="Never"/>
+    <disable_collisions link1="base_link" link2="bicep" reason="User"/>
+    <disable_collisions link1="base_link" link2="bottom_wrist" reason="User"/>
+    <disable_collisions link1="arm_base" link2="bottom_wrist" reason="User"/>
+    <disable_collisions link1="arm_base" link2="elbow" reason="User"/>
+    <disable_collisions link1="base_link" link2="elbow" reason="User"/>
+    <disable_collisions link1="base_link" link2="top_wrist" reason="User"/>
+    <disable_collisions link1="arm_base" link2="top_wrist" reason="User"/>
+    <disable_collisions link1="bicep" link2="top_wrist" reason="User"/>
+    <disable_collisions link1="bicep" link2="elbow" reason="User"/>
+    <disable_collisions link1="bottom_wrist" link2="laser_link" reason="User"/>
+    <disable_collisions link1="bicep" link2="laser_link" reason="User"/>
+    <disable_collisions link1="elbow" link2="laser_link" reason="User"/>
+    <disable_collisions link1="elbow" link2="front_right_wheel" reason="User"/>
+    <disable_collisions link1="bottom_wrist" link2="front_right_wheel" reason="User"/>
+    <disable_collisions link1="bottom_wrist" link2="front_left_wheel" reason="User"/>
+    <disable_collisions link1="elbow" link2="front_left_wheel" reason="User"/>
+    <disable_collisions link1="front_left_wheel" link2="top_wrist" reason="User"/>
+    <disable_collisions link1="front_right_wheel" link2="top_wrist" reason="User"/>
+    <disable_collisions link1="imu_link" link2="top_wrist" reason="User"/>
+    <disable_collisions link1="laser_link" link2="top_wrist" reason="User"/>
+    <disable_collisions link1="rear_left_wheel" link2="top_wrist" reason="User"/>
+    <disable_collisions link1="rear_right_wheel" link2="top_wrist" reason="User"/>
+    <disable_collisions link1="elbow" link2="rear_right_wheel" reason="User"/>
+    <disable_collisions link1="elbow" link2="rear_left_wheel" reason="User"/>
+</robot>
