@@ -46,6 +46,7 @@ This project features a robust software architecture that utilizes a range of cu
 
 ### 🔹 UML Diagram: 📊
 <br><br>
+![UMLDiagram drawio (3)](https://user-images.githubusercontent.com/72270080/236412392-6abf096c-087b-4e3d-adc1-a51ea9e8ce7f.png)
 
 
 <br><br>
@@ -140,11 +141,13 @@ in your workspace and load the owl file as per the command described in the scri
                                                 catkin_make
 
 
-rocketOnce everything build.To execute the script with simulation do roslaunch command .
+rocketOnce everything build.To execute the script with simulation do roslaunch command  and a python command in three different terminal in order.
                                          
                                          roslaunch expo_assignment_1 survailence_robot.launch
                                          roslaunch assignment2 assignment.launch
+                                         python send_goal_to_arm.py
 
+Once after the execution of the planning then a /decision topic is published to the statemachine for executing further process based on that further working takes place in the system. 
 # Results
 The following has been attached at initially gave the result with the simulation environment:
 
@@ -172,7 +175,8 @@ The following has been attached at initially gave the result with the simulation
 🤖 By leveraging quantum-inspired algorithms, it is possible to implement autonomous navigation and decision-making capabilities in mobile robots, allowing them to operate in complex and dynamic environments with greater efficiency and accuracy. This can open up new possibilities for applications such as 🚨 search and rescue, 🏭 industrial automation, and more. With ongoing research and development in this area, the potential for quantum-inspired robotics is only set to 📈 grow in the future.It has been done with the integration of ros and qiskit.which was inspired from the 
 http://www.quantum-robot.org/
 
-where the following task can be executed by the decision making node [Decision-make node] https://github.com/yeshwanthguru/q-robot-Thesis-Introductory/blob/test_main/tiago_testmain2.py
+where the following task can be executed by the decision making node [Decision-make node](https://github.com/yeshwanthguru/q-robot-Thesis-Introductory/blob/test_main/tiago_testmain2.py)
+
 
 which has the single sensory integration for reference meanwhile the multi sensroy can be done based on the scenario that need to be achieved .
 By making these improvements, we aim to provide a more attractive and user-friendly system for our users. Our goal is to help investigators to solve crimes quickly and efficiently, ultimately making our communities safer.This proposal is for radical architecture approch with bio inspired.
