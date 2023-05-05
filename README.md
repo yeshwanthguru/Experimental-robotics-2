@@ -150,7 +150,7 @@ rocketOnce everything build.To execute the script with simulation do roslaunch c
 Once after the execution of the planning then a /decision topic is published to the statemachine for executing further process based on that further working takes place in the system.And moveit is used for  the motion planning where the following can beed found in the folder [ass2](https://github.com/yeshwanthguru/Experimental-robotics-2/tree/main/ass2)
 
 ## Moveit
-here are the benefits of using MoveIt in ROS Noetic with even more emojis:
+here are the benefits of using MoveIt in ROS Noetic :
 
 🚀 Simplified motion planning: MoveIt provides a simplified interface for motion planning that allows the user to specify a goal configuration and generate a trajectory to reach that configuration.
 
