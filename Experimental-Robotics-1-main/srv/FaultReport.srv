@@ -1,0 +1,3 @@
+# FaultReport.srv
+string fault_message
+bool received
