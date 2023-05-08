@@ -202,7 +202,7 @@ where the following task can be executed by the decision making node [Decision-m
 
 
 which has the single sensory integration for reference meanwhile the multi sensroy can be done based on the scenario that need to be achieved .
-By making these improvements, we aim to provide a more attractive and user-friendly system for our users. Our goal is to help investigators to solve crimes quickly and efficiently, ultimately making our communities safer.This proposal is for radical architecture approch with bio inspired.
+By making these improvements, we aim to provide a more attractive and user-friendly system for our users. Our goal is to developed bio inspired mobile navigation.This proposal is for radical architecture approch with bio inspired.
 
          
 
