@@ -130,6 +130,15 @@ Signals to ROS that the program is done. 🛑🤖
 The program signals to ROS that it has completed all tasks.
 ## WALL_FOLLOW : 
 This Python script implements a wall-following behavior for a robot using laser sensors in ROS. 🤖👀🚶‍♂️ The script defines functions to control the robot's linear and angular velocities, and a class to send control actions to move the robot. The main() function initializes the ROS node, creates publishers, subscribers, and a service to switch the wall-follower on and off. The callback function clbk_laser() updates the distances to obstacles in different directions. The take_action() function determines the state of the robot based on the distances, calls the appropriate function to generate the Twist message, and changes the robot's state. The find_wall() function makes the robot move forward and turn left to find a wall. The turn_left() function makes the robot turn left. The follow_the_wall() function makes the robot follow the wall. 🏃‍♂️🔄🧱 
+![Screenshot from 2023-05-08 11-22-26](https://user-images.githubusercontent.com/72270080/236789601-bc64ba7f-7164-4fe2-8507-ce99931dd20f.png)
+
+
+https://user-images.githubusercontent.com/72270080/236792785-462ae87a-ca26-41f4-a656-ec2217e597b2.mp4
+
+![Screenshot from 2023-05-08 00-24-05](https://user-images.githubusercontent.com/72270080/236794609-848e02c4-dd4a-4043-ab1d-501ae1fb3012.png)
+![Screenshot from 2023-05-08 11-53-32](https://user-images.githubusercontent.com/72270080/236794781-af7477a6-d54b-4962-8c6e-bfc08e1709e9.png)
+
+
 ## 🛠️ Setup and Working Process:
 🖥️ This project is developed using [Docker](https://hub.docker.com/r/carms84/exproblab) which has all the necessary dependencies installed. If you don't want to use Docker and prefer to install the dependencies manually, you'll need to install Armor, SMACH, and since this is a ROS Noetic based project. Once the dependencies are installed, you'll need to clone the following Git link to your workspace and load the OWL file as per the command described in the script, adding the path of the OWL file manually at your convenience.
 
@@ -143,8 +152,9 @@ in your workspace and load the owl file as per the command described in the scri
 
 rocketOnce everything build.To execute the script with simulation do roslaunch command  and a python command in three different terminal in order.
                                          
-                                         roslaunch expo_assignment_1 survailence_robot.launch
-                                         roslaunch assignment2 assignment.launch
+                                       
+                       1st idea               roslaunch expo_assignment_1 survailence_robot.launch
+                       2nd idea                  roslaunch assignment2 assignment.launch
                                          python send_goal_to_arm.py
 
 Once after the execution of the planning then a /decision topic is published to the statemachine for executing further process based on that further working takes place in the system.And moveit is used for  the motion planning where the following can beed found in the folder [ass2](https://github.com/yeshwanthguru/Experimental-robotics-2/tree/main/ass2)
